@@ -1,0 +1,72 @@
+:root{
+    --squ: min(8vh,9.5vw);
+    --marup: calc((100vh - (var(--squ))*9)/2);
+    --marside: calc((100vw - (var(--squ))*9)/2);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; 
+}
+
+body{
+    background-image: url(https://images.wallpaperscraft.com/image/single/stars_sky_night_113553_1280x720.jpg);
+}
+
+.table{
+    margin: var(--marup) var(--marside) 0;
+    display: grid;
+    grid: repeat(9, 1fr) / 1fr;
+}
+
+.row{
+    display: flex;
+}
+
+.square{
+    background-color: white;
+    width: var(--squ);
+    height: var(--squ);
+    color: black;
+    text-align: center;
+    font-size: calc(var(--squ)*0.9);
+    font-weight: bold;
+}
+
+.row:nth-child(2n) .square:nth-child(2n){
+    background-color: purple;
+}
+.row:nth-child(2n-1) .square:nth-child(2n-1){
+    background-color: purple;
+
+}
+
+.knight{
+    opacity: 0.9;
+    width: var(--squ);
+    height: var(--squ);
+    position: absolute;
+    transition: all 2s;
+}
+
+.bot{
+    width: calc(var(--squ)*9);
+    display: flex;
+    margin-left: var(--marside);
+    justify-content: space-evenly
+}
+
+button{
+    width: calc((var(--squ)*9)/3.5);
+    height: 4vh;
+    cursor: pointer;
+    border: 0;
+    margin-top: 1vh;
+}
+
+.hovering:hover{
+    background-color: rgb(0, 166, 255) !important;
+    cursor: pointer;
+}
+
